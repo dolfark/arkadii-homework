@@ -1,0 +1,7 @@
+FROM alpine:3.13.5
+RUN apk update
+RUN apk add git
+ENV REPO_URL https://github.com/dolfark/arkadii-homework.git
+WORKDIR /data
+VOLUME /data
+CMD git clone $REPO_URL
