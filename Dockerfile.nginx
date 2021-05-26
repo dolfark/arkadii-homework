@@ -1,0 +1,11 @@
+FROM nginx:latest
+
+COPY index.html  /usr/share/nginx/html
+
+COPY entrypoint.sh ./
+
+ENV MY_NAME=Default
+
+RUN chmod u+x entrypoint.sh
+
+CMD ["./entrypoint.sh"]
